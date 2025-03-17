@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-COPY install/ /px4_msgs/install/
+COPY px4_msgs_install/ /px4_msgs/install/
 
 # # Create a temporary directory for building px4_msgs
 # WORKDIR /px4_msgs_build/src
