@@ -1,0 +1,24 @@
+[0.753s] Invoking command in '/home/ryan/Humble-VOXL2/starling_arm_test': PYTHONPATH=/home/ryan/Humble-VOXL2/build/starling_arm_test/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ryan/Humble-VOXL2/install/starling_arm_test/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/starling_arm_test build --build-base /home/ryan/Humble-VOXL2/build/starling_arm_test/build install --record /home/ryan/Humble-VOXL2/build/starling_arm_test/install.log --single-version-externally-managed install_data
+[0.950s] running egg_info
+[0.950s] writing ../build/starling_arm_test/starling_arm_test.egg-info/PKG-INFO
+[0.950s] writing dependency_links to ../build/starling_arm_test/starling_arm_test.egg-info/dependency_links.txt
+[0.950s] writing entry points to ../build/starling_arm_test/starling_arm_test.egg-info/entry_points.txt
+[0.950s] writing requirements to ../build/starling_arm_test/starling_arm_test.egg-info/requires.txt
+[0.950s] writing top-level names to ../build/starling_arm_test/starling_arm_test.egg-info/top_level.txt
+[0.952s] reading manifest file '../build/starling_arm_test/starling_arm_test.egg-info/SOURCES.txt'
+[0.952s] writing manifest file '../build/starling_arm_test/starling_arm_test.egg-info/SOURCES.txt'
+[0.952s] running build
+[0.952s] running build_py
+[0.952s] copying starling_arm_test/starling_publish_position.py -> /home/ryan/Humble-VOXL2/build/starling_arm_test/build/lib/starling_arm_test
+[0.952s] running install
+[0.953s] running install_lib
+[0.953s] copying /home/ryan/Humble-VOXL2/build/starling_arm_test/build/lib/starling_arm_test/starling_publish_position.py -> /home/ryan/Humble-VOXL2/install/starling_arm_test/lib/python3.10/site-packages/starling_arm_test
+[0.953s] byte-compiling /home/ryan/Humble-VOXL2/install/starling_arm_test/lib/python3.10/site-packages/starling_arm_test/starling_publish_position.py to starling_publish_position.cpython-310.pyc
+[0.954s] running install_data
+[0.954s] running install_egg_info
+[0.955s] removing '/home/ryan/Humble-VOXL2/install/starling_arm_test/lib/python3.10/site-packages/starling_arm_test-0.0.0-py3.10.egg-info' (and everything under it)
+[0.955s] Copying ../build/starling_arm_test/starling_arm_test.egg-info to /home/ryan/Humble-VOXL2/install/starling_arm_test/lib/python3.10/site-packages/starling_arm_test-0.0.0-py3.10.egg-info
+[0.955s] running install_scripts
+[0.971s] Installing starling_publish_position script to /home/ryan/Humble-VOXL2/install/starling_arm_test/lib/starling_arm_test
+[0.971s] writing list of installed files to '/home/ryan/Humble-VOXL2/build/starling_arm_test/install.log'
+[0.998s] Invoked command in '/home/ryan/Humble-VOXL2/starling_arm_test' returned '0': PYTHONPATH=/home/ryan/Humble-VOXL2/build/starling_arm_test/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ryan/Humble-VOXL2/install/starling_arm_test/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/starling_arm_test build --build-base /home/ryan/Humble-VOXL2/build/starling_arm_test/build install --record /home/ryan/Humble-VOXL2/build/starling_arm_test/install.log --single-version-externally-managed install_data

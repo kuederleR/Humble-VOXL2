@@ -1,17 +1,25 @@
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Point
-from rclpy.qos import qos_profile_system_default
+from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
+
 
 class PositionListener(Node):
 
     def __init__(self):
         super().__init__('position_listener')
+
+        qos_profile = QoSProfile(
+            reliability=ReliabilityPolicy.BEST_EFFORT,
+            durability=DurabilityPolicy.TRANSIENT_LOCAL,
+            history=HistoryPolicy.KEEP_LAST,
+            depth=1,
+        )
         self.subscription = self.create_subscription(
             Point,
             '/test/position',
             self.listener_callback,
-            qos_profile_system_default)
+            qos_profile)
         self.subscription  # prevent unused variable warning
 
     def listener_callback(self, msg):

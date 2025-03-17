@@ -1,0 +1,25 @@
+[0.705s] Invoking command in '/home/ryan/Humble-VOXL2/base_arm_test': PYTHONPATH=/home/ryan/Humble-VOXL2/build/base_arm_test/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ryan/Humble-VOXL2/install/base_arm_test/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/base_arm_test build --build-base /home/ryan/Humble-VOXL2/build/base_arm_test/build install --record /home/ryan/Humble-VOXL2/build/base_arm_test/install.log --single-version-externally-managed install_data
+[0.897s] running egg_info
+[0.897s] writing ../build/base_arm_test/base_arm_test.egg-info/PKG-INFO
+[0.897s] writing dependency_links to ../build/base_arm_test/base_arm_test.egg-info/dependency_links.txt
+[0.897s] writing entry points to ../build/base_arm_test/base_arm_test.egg-info/entry_points.txt
+[0.898s] writing requirements to ../build/base_arm_test/base_arm_test.egg-info/requires.txt
+[0.898s] writing top-level names to ../build/base_arm_test/base_arm_test.egg-info/top_level.txt
+[0.898s] reading manifest file '../build/base_arm_test/base_arm_test.egg-info/SOURCES.txt'
+[0.899s] writing manifest file '../build/base_arm_test/base_arm_test.egg-info/SOURCES.txt'
+[0.899s] running build
+[0.899s] running build_py
+[0.899s] copying base_arm_test/listen_for_position.py -> /home/ryan/Humble-VOXL2/build/base_arm_test/build/lib/base_arm_test
+[0.899s] running install
+[0.899s] running install_lib
+[0.900s] copying /home/ryan/Humble-VOXL2/build/base_arm_test/build/lib/base_arm_test/listen_for_position.py -> /home/ryan/Humble-VOXL2/install/base_arm_test/lib/python3.10/site-packages/base_arm_test
+[0.900s] byte-compiling /home/ryan/Humble-VOXL2/install/base_arm_test/lib/python3.10/site-packages/base_arm_test/listen_for_position.py to listen_for_position.cpython-310.pyc
+[0.900s] running install_data
+[0.901s] running install_egg_info
+[0.902s] removing '/home/ryan/Humble-VOXL2/install/base_arm_test/lib/python3.10/site-packages/base_arm_test-0.0.0-py3.10.egg-info' (and everything under it)
+[0.902s] Copying ../build/base_arm_test/base_arm_test.egg-info to /home/ryan/Humble-VOXL2/install/base_arm_test/lib/python3.10/site-packages/base_arm_test-0.0.0-py3.10.egg-info
+[0.902s] running install_scripts
+[0.917s] Installing base_arm_test script to /home/ryan/Humble-VOXL2/install/base_arm_test/lib/base_arm_test
+[0.917s] Installing listen_for_pose script to /home/ryan/Humble-VOXL2/install/base_arm_test/lib/base_arm_test
+[0.917s] writing list of installed files to '/home/ryan/Humble-VOXL2/build/base_arm_test/install.log'
+[0.945s] Invoked command in '/home/ryan/Humble-VOXL2/base_arm_test' returned '0': PYTHONPATH=/home/ryan/Humble-VOXL2/build/base_arm_test/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ryan/Humble-VOXL2/install/base_arm_test/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/base_arm_test build --build-base /home/ryan/Humble-VOXL2/build/base_arm_test/build install --record /home/ryan/Humble-VOXL2/build/base_arm_test/install.log --single-version-externally-managed install_data

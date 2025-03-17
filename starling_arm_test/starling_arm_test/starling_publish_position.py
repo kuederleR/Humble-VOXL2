@@ -2,11 +2,19 @@ import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import PoseStamped, Point
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
+from rclpy.qos import RMW_QOS_POLICY_RELIABILITY_BEST_EFFORT, RMW_QOS_POLICY_HISTORY_KEEP_LAST, RMW_QOS_POLICY_DURABILITY_VOLATILE, RMW_QOS_POLICY_LIVELINESS_AUTOMATIC
 
 class PoseToPointPublisher(Node):
 
     def __init__(self):
         super().__init__('pose_to_point_publisher')
+
+        rmw_qos_profile = QoSProfile(
+            reliability=RMW_QOS_POLICY_RELIABILITY_BEST_EFFORT,
+            history=RMW_QOS_POLICY_HISTORY_KEEP_LAST,
+            durability=RMW_QOS_POLICY_DURABILITY_VOLATILE,
+            liveliness=RMW_QOS_POLICY_LIVELINESS_AUTOMATIC,
+        )
 
         qos_profile = QoSProfile(
             reliability=ReliabilityPolicy.BEST_EFFORT,
@@ -19,7 +27,7 @@ class PoseToPointPublisher(Node):
             PoseStamped,
             '/qvio',
             self.listener_callback,
-            qos_profile)
+            rmw_qos_profile)
         self.publisher_ = self.create_publisher(Point, '/test/position', qos_profile)
         self.subscription  # prevent unused variable warning
 
