@@ -1,8 +1,8 @@
 import rclpy
+import rclpy.duration
 from rclpy.node import Node
 from geometry_msgs.msg import PoseStamped, Point
-from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
-from rclpy.qos import RMW_QOS_POLICY_RELIABILITY_BEST_EFFORT, RMW_QOS_POLICY_HISTORY_KEEP_LAST, RMW_QOS_POLICY_DURABILITY_VOLATILE, RMW_QOS_POLICY_LIVELINESS_AUTOMATIC
+from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy, LivelinessPolicy
 
 class PoseToPointPublisher(Node):
 
@@ -10,10 +10,9 @@ class PoseToPointPublisher(Node):
         super().__init__('pose_to_point_publisher')
 
         rmw_qos_profile = QoSProfile(
-            reliability=RMW_QOS_POLICY_RELIABILITY_BEST_EFFORT,
-            history=RMW_QOS_POLICY_HISTORY_KEEP_LAST,
-            durability=RMW_QOS_POLICY_DURABILITY_VOLATILE,
-            liveliness=RMW_QOS_POLICY_LIVELINESS_AUTOMATIC,
+            reliability=ReliabilityPolicy.BEST_EFFORT,
+            durability=DurabilityPolicy.VOLATILE,
+            liveliness=LivelinessPolicy.AUTOMATIC
         )
 
         qos_profile = QoSProfile(
