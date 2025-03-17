@@ -9,33 +9,21 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-COPY /data/voxl-suite-offline-packages/voxl-mpa-to-ros2_*.deb /tmp/
-RUN dpkg -i /tmp/voxl-mpa-to-ros2_*.deb || apt-get install -f -y \
-    && rm /tmp/voxl-mpa-to-ros2_*.deb
 
-# Copy the files in the subdirectories to the container
-# COPY voxl-mpa-to-ros2/ /voxl-mpa-to-ros2/
+# Create a temporary directory for building px4_msgs
+WORKDIR /tmp/px4_msgs_build/src
 
-# # Initialize rosdep
-# RUN rosdep init && rosdep update
+# Clone px4_msgs (using the main branch; adjust if needed)
+RUN git clone https://github.com/PX4/px4_msgs.git
 
-# # Create a workspace
-# RUN mkdir -p /ros2_ws/src
+# Install dependencies and build px4_msgs, installing it to /opt/ros/humble
+WORKDIR /tmp/px4_msgs_build
+RUN rosdep init && rosdep update \
+    && rosdep install --from-paths src --ignore-src -r -y \
+    && /bin/bash -c "source /opt/ros/humble/setup.bash && colcon build --install-base /opt/ros/humble"
 
-# # Set the working directory
-# WORKDIR /ros2_ws
+# Clean up temporary build directory
+RUN rm -rf /tmp/px4_msgs_build
 
-# # Copy the package files
-# COPY . /ros2_ws
-
-# # Install dependencies
-# RUN rosdep install --from-paths src --ignore-src -r -y
-
-# # Build the workspace
-# RUN colcon build
-
-# # Source the setup script
-# RUN echo "source /ros2_ws/install/setup.bash" >> ~/.bashrc
-
-# # Set the entrypoint
-# ENTRYPOINT ["/bin/bash", "-c", "source /ros2_ws/install/setup.bash && bash"]
+# Set the entrypoint to a shell with ROS 2 sourced
+CMD ["/bin/bash", "-c", "source /opt/ros/humble/setup.bash && bash"]
