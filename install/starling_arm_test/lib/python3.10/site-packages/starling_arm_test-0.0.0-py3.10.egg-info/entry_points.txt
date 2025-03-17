@@ -1,0 +1,3 @@
+[console_scripts]
+starling_publish_position = starling_arm_test.starling_publish_position:main
+

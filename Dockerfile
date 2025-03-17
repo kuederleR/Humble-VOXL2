@@ -12,6 +12,15 @@ RUN apt-get update && apt-get install -y \
 
 COPY px4_msgs_install/ /px4_msgs/install/
 
+# Copy the workspace into the container
+COPY ./ /workspace/
+
+# Set the working directory to the workspace
+WORKDIR /workspace
+
+# Build the workspace
+RUN /bin/bash -c "source /opt/ros/humble/setup.bash && colcon build"
+
 # # Create a temporary directory for building px4_msgs
 # WORKDIR /px4_msgs_build/src
 
@@ -26,4 +35,4 @@ COPY px4_msgs_install/ /px4_msgs/install/
 # WORKDIR /
 
 # Set the entrypoint to a shell with ROS 2 sourced
-CMD ["/bin/bash", "-c", "source /opt/ros/humble/setup.bash && source /px4_msgs/install/setup.bash && bash"]
+CMD ["/bin/bash", "-c", "source /opt/ros/humble/setup.bash && source /px4_msgs/install/setup.bash && source /workspace/install/setup.bash && bash"]
