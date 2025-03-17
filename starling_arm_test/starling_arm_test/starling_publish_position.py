@@ -1,18 +1,26 @@
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import PoseStamped, Point
-from rclpy.qos import qos_profile_system_default
+from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
 
 class PoseToPointPublisher(Node):
 
     def __init__(self):
         super().__init__('pose_to_point_publisher')
+
+        qos_profile = QoSProfile(
+            reliability=ReliabilityPolicy.BEST_EFFORT,
+            durability=DurabilityPolicy.TRANSIENT_LOCAL,
+            history=HistoryPolicy.KEEP_LAST,
+            depth=1,
+        )
+
         self.subscription = self.create_subscription(
             PoseStamped,
             '/qvio',
             self.listener_callback,
-            qos_profile_system_default)
-        self.publisher_ = self.create_publisher(Point, '/test/position', qos_profile_system_default)
+            qos_profile)
+        self.publisher_ = self.create_publisher(Point, '/test/position', qos_profile)
         self.subscription  # prevent unused variable warning
 
     def listener_callback(self, msg):
