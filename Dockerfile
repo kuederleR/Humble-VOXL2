@@ -9,6 +9,10 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
+COPY /data/voxl-suite-offline-packages/voxl-mpa-to-ros2_*.deb /tmp/
+RUN dpkg -i /tmp/voxl-mpa-to-ros2_*.deb || apt-get install -f -y \
+    && rm /tmp/voxl-mpa-to-ros2_*.deb
+
 # Copy the files in the subdirectories to the container
 # COPY voxl-mpa-to-ros2/ /voxl-mpa-to-ros2/
 
