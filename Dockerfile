@@ -9,7 +9,6 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-
 # Create a temporary directory for building px4_msgs
 WORKDIR /tmp/px4_msgs_build/src
 
@@ -18,7 +17,7 @@ RUN git clone https://github.com/PX4/px4_msgs.git
 
 # Install dependencies and build px4_msgs, installing it to /opt/ros/humble
 WORKDIR /tmp/px4_msgs_build
-RUN rosdep init && rosdep update \
+RUN rosdep update \
     && rosdep install --from-paths src --ignore-src -r -y \
     && /bin/bash -c "source /opt/ros/humble/setup.bash && colcon build --install-base /opt/ros/humble"
 
