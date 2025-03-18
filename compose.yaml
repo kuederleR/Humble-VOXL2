@@ -1,0 +1,10 @@
+services:
+  my_service:
+    build: .  # Builds the image from the Dockerfile in the current directory
+    container_name: my_container
+    networks:
+      - my_bridge_network
+
+networks:
+  my_bridge_network:
+    driver: bridge
