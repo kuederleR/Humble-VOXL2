@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'starling_publish_position = starling_arm_test.starling_publish_position:main'
+            'starling_publish_position = starling_arm_test.starling_publish_position:main',
+            'arm_listener = starling_arm_test.arm_listener:main',
         ],
     },
 )

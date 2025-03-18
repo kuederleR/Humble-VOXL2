@@ -21,7 +21,8 @@ setup(
     entry_points={
         'console_scripts': [
             'base_arm_test = base_arm_test.main:main',
-            'listen_for_pose = base_arm_test.listen_for_position:main'
+            'listen_for_pose = base_arm_test.listen_for_position:main',
+            'arm_talker = base_arm_test.arm_talker:main',
         ],
     },
 )
