@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
     python3-vcstool \
     build-essential \
     git \
+    ros-humble-demo-nodes-py \
     && rm -rf /var/lib/apt/lists/*
 
 COPY px4_msgs_install/ /px4_msgs/install/
