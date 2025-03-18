@@ -44,7 +44,7 @@ class StarlingArmNode(Node):
         self.base_arm_subscriber = self.create_subscription(
             Bool,
             "/test/arm",
-            self.arm,
+            self.arm_callback,
             qos_profile,
         )
 
@@ -71,9 +71,9 @@ class StarlingArmNode(Node):
         """Callback function for arm command."""
         if msg.data:
             self.engage_offboard_mode()
-            self.arm()
+            self.arm_flag = 1
         else:
-            self.disarm()
+            self.arm_flag = -1
 
     def vehicle_local_position_callback(self, vehicle_local_position):
         print(vehicle_local_position)
